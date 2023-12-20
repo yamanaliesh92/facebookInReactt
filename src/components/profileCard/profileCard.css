@@ -1,0 +1,86 @@
+.profileCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.4rem;
+  gap: 1rem;
+}
+.protfileImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.coverimg {
+  width: 100%;
+}
+.headImg {
+  width: 8rem;
+  border-radius: 50%;
+  box-shadow: var(--profileShadow);
+  position: absolute;
+  bottom: 10.5rem;
+}
+.profileName {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.profileName > span:nth-of-type(1) {
+  font-weight: bold;
+}
+.followStatue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+.followStatue > hr {
+  width: 85%;
+  border: 1px solid var(--hrColor);
+  margin-bottom: 0.2rem;
+}
+.styleFollow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 88%;
+}
+.follow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.follow > span:nth-last-of-type(1) {
+  font-weight: bold;
+}
+.follow > span:nth-last-of-type(2) {
+  color: var(--gray);
+}
+.vl {
+  height: 150%;
+  border-left: 2px solid var(--hrColor);
+  margin-bottom: 0.2rem;
+}
+
+.editName {
+  display: flex;
+  align-items: center;
+}
+
+.styleButtonEdit {
+  margin-left: 0.3rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.styleButtonEdit:hover {
+  cursor: pointer;
+}

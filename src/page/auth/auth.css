@@ -1,0 +1,27 @@
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 4rem;
+  position: relative;
+}
+
+.webname {
+  display: flex;
+  flex-direction: column;
+}
+.webname > h1 {
+  font-size: 2.1rem;
+  color: red;
+  margin-bottom: 0.4rem;
+  background-image: var(--buttonBg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.webname > h6 {
+  font-size: 0.9rem;
+}

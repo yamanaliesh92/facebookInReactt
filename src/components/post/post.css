@@ -1,0 +1,76 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  gap: 1.3rem;
+  padding: 1rem;
+  background-color: var(--cardColor);
+}
+.post > img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+}
+.postReact {
+  display: flex;
+  align-items: center;
+}
+.option {
+  margin: 0.2rem;
+}
+.crud {
+  display: flex;
+  align-items: center;
+}
+.likeStyle {
+  margin-right: 0.2rem;
+}
+.editStyle {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sendStyle {
+  position: absolute;
+  right: 1px;
+  top: 10px;
+}
+.StyleImg {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 0.4rem;
+}
+.styleInformation {
+  display: flex;
+  align-items: center;
+  /* border-bottom-width: 40px; */
+  /* border-bottom: 10px gold; */
+  /* border-bottom-color: #ffffff38; */
+}
+.timeAt {
+  font-size: 1rem;
+}
+.styledetailsUser {
+  display: flex;
+  margin: 0.6rem;
+  flex-direction: column;
+  align-items: center;
+}
+.styleTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid gray;
+}
+
+@media screen and (max-width: 550px) {
+  .crud {
+    flex-direction: column;
+    margin-left: 4px;
+  }
+  .styleTop {
+    flex-direction: column;
+    align-items: self-start;
+  }
+}

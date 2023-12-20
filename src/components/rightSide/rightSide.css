@@ -1,0 +1,30 @@
+.rightside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sh {
+  height: 3rem;
+  width: 80%;
+  align-self: center;
+}
+
+@media screen and (max-width: 750px) and (min-width: 550px) {
+  .rightside {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .rightside {
+    width: 240px;
+  }
+  .navLink {
+    justify-content: flex-start;
+  }
+}

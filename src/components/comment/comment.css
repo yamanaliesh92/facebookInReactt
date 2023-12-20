@@ -1,0 +1,61 @@
+.comment {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  position: relative;
+}
+.input {
+  width: 100%;
+}
+.commentTitle {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.commentContiner {
+  display: flex;
+  flex-direction: column;
+}
+.styleSendIcon {
+  position: absolute;
+  bottom: 1.6rem;
+  font-size: 1.4rem;
+  right: 1.4rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+.styleSendIcon:hover {
+  cursor: pointer;
+}
+.styleTitle {
+  font-size: 1.3rem;
+  margin: 0.7rem;
+}
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+.styleCreateAt {
+  font-size: 10px;
+
+  position: absolute;
+  left: 68px;
+  margin-left: 15px;
+  color: red;
+}
+
+.styleForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.actionStyle {
+  display: flex;
+  align-items: center;
+}

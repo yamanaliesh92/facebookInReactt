@@ -1,0 +1,52 @@
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-radius: 1rem;
+  width: 90%;
+  padding: 1rem;
+  background-color: var(--cardColor);
+  overflow: hidden;
+}
+.infohead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.infohead > div:hover {
+  cursor: pointer;
+}
+.logout-button {
+  width: 5rem;
+  height: 2rem;
+  align-self: flex-end;
+}
+.createInfo {
+  width: 5rem;
+  height: 2rem;
+  align-self: flex-start;
+}
+.styleButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 550px) and (max-width: 750px) {
+  .infoCard {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .infoCard {
+    width: 240px;
+  }
+  .styleButtons {
+    flex-direction: column;
+  }
+  .logout-button {
+    align-self: start;
+    margin-top: 10px;
+  }
+}

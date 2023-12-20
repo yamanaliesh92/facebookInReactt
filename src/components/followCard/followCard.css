@@ -1,0 +1,64 @@
+.followCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  gap: 1rem;
+  border-radius: 0.7rem;
+}
+.text {
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.follwers {
+  display: flex;
+  align-items: center;
+  /* gap: 1.2rem; */
+  justify-content: space-between;
+}
+.follwers > div {
+  display: flex;
+}
+.followingImg {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.name {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.7rem;
+  font-weight: bold;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: white;
+  background: var(--buttonBg);
+  transition: all 100ms ease-in-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+}
+.button:hover {
+  color: #f9a225;
+  border: 2px soild #f9a225;
+  background: transparent;
+  cursor: pointer;
+}
+.titleStyle {
+  color: red;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 550px) {
+  .titleStyle {
+    font-size: 14px;
+  }
+}

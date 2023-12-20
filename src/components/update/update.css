@@ -1,0 +1,9 @@
+.update {
+  width: 8rem;
+  height: 8rem;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+}

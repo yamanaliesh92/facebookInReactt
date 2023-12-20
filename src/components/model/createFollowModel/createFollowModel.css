@@ -1,0 +1,40 @@
+.wrapeer {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem;
+  overflow: auto;
+}
+.styleContiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.styleInformationUser {
+  display: flex;
+  align-items: center;
+}
+.styleUserName {
+  margin-left: 0.6rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.styleText {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.styleTwoButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.styleNoFreind {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem;
+}
+.butt {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}

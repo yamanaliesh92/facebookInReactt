@@ -1,0 +1,11 @@
+.home {
+  display: grid;
+  grid-template-columns: auto 15rem;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 755px) {
+  .home {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
