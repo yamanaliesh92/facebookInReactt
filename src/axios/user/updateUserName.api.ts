@@ -1,12 +1,12 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 export interface IUpdateUserName {
   username: string;
 }
 
-export type dateUpateUserName = AxiosResposes<void>;
+export type dateUpdateUserName = AxiosResponses<void>;
 
-export async function updateNameApi(paylod: IUpdateUserName) {
-  return http.put("/user/update", { username: paylod.username });
+export async function updateNameApi(payload: IUpdateUserName) {
+  return http.put("/user/update", { username: payload.username });
 }

@@ -1,14 +1,13 @@
 import { Modal } from "@mantine/core";
 import React, { ChangeEvent, FC, useState } from "react";
 import { useMutation } from "react-query";
-import { useNavigate } from "react-router-dom";
 import { AxiosErrors } from "../../axios/common.api";
 import {
   crateInfoApi,
   infoDate,
   IPayloadCrateInfo,
 } from "../../axios/info/createInfo.api";
-interface Iprops {
+interface Props {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -20,7 +19,7 @@ const init: IPayloadCrateInfo = {
   relationShip: "",
 };
 
-const Modeles: FC<Iprops> = ({ setOpen, open }) => {
+const Modeles: FC<Props> = ({ setOpen, open }) => {
   const [infoCard, setInfoCard] = useState<IPayloadCrateInfo>(init);
 
   const { mutateAsync } = useMutation<infoDate, AxiosErrors, IPayloadCrateInfo>(

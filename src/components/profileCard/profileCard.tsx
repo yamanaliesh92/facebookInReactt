@@ -7,7 +7,7 @@ import React, { ChangeEvent, useContext, useState } from "react";
 import { ContextUser } from "../../context/userContext";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import {
-  dateUpateUserName,
+  dateUpdateUserName,
   IUpdateUserName,
   updateNameApi,
 } from "../../axios/user/updateUserName.api";
@@ -31,7 +31,7 @@ const ProfileCard = () => {
     setUpdateNameState({ username: e.target.value });
   };
   const { mutateAsync, error } = useMutation<
-    dateUpateUserName,
+    dateUpdateUserName,
     AxiosErrors,
     IUpdateUserName
   >("updateUserName", updateNameApi);

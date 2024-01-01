@@ -1,4 +1,4 @@
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 import { http } from "..";
 
 export interface IResult {
@@ -10,7 +10,7 @@ export interface IResult {
   createAt: Date;
 }
 
-export type MeDate = AxiosResposes<IResult>;
+export type MeDate = AxiosResponses<IResult>;
 
 export async function getMe() {
   return await http.get("/user/me");

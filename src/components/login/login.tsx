@@ -34,9 +34,9 @@ const Login: FC<Iprops> = ({ logins, setLogin }) => {
     setForgetPassword((prev) => !prev);
   };
 
-  const navagite = useNavigate();
+  const navigate = useNavigate();
 
-  const onchnage = (e: ChangeEvent<HTMLInputElement>) => {
+  const onchange = (e: ChangeEvent<HTMLInputElement>) => {
     setElement((prev) => {
       return {
         ...prev,
@@ -45,7 +45,7 @@ const Login: FC<Iprops> = ({ logins, setLogin }) => {
     });
   };
 
-  const { mutateAsync, error, data } = useMutation<
+  const { mutateAsync, error, isLoading } = useMutation<
     LoginDataApi,
     AxiosErrors,
     IPayloadLogin
@@ -67,7 +67,7 @@ const Login: FC<Iprops> = ({ logins, setLogin }) => {
 
     setToken("MyToken", data.token);
 
-    navagite("/");
+    navigate("/");
   };
 
   const toggle = () => {
@@ -77,6 +77,8 @@ const Login: FC<Iprops> = ({ logins, setLogin }) => {
   return (
     <div className="right">
       <form className="infoForm authForm" onSubmit={onsubmit}>
+        {error && <h1>{error.message}</h1>}
+        {isLoading && <h1>loading.....</h1>}
         <h3>login</h3>
         <div>
           <input
@@ -86,7 +88,7 @@ const Login: FC<Iprops> = ({ logins, setLogin }) => {
             className="infoInput input"
             name="email"
             value={element.email}
-            onChange={onchnage}
+            onChange={onchange}
           />
         </div>
 
@@ -98,7 +100,7 @@ const Login: FC<Iprops> = ({ logins, setLogin }) => {
             data-testid="passwordTest"
             name="password"
             value={element.password}
-            onChange={onchnage}
+            onChange={onchange}
           />
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>

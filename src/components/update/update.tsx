@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { infoDate, IPayloadCrateInfo } from "../../axios/info/createInfo.api";
-import { IpayloadUpdate, updateInfoApi } from "../../axios/info/updateInfo.api";
+import { PayloadUpdate, updateInfoApi } from "../../axios/info/updateInfo.api";
 import { Modal } from "@mantine/core";
 import { getOwnInfoApi } from "../../axios/info/getOwnInfo.api";
 
@@ -42,7 +42,7 @@ const UpdateComponent: FC<IProps> = ({ setUpdate, items, update }) => {
 
   const onSubmitInfoCard = async (e: React.FormEvent) => {
     e.preventDefault();
-    const Payload: IpayloadUpdate = {
+    const Payload: PayloadUpdate = {
       workAt: editInfoCard.workAt,
       country: editInfoCard.country,
       livesIn: editInfoCard.livesIn,

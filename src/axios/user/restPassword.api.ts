@@ -1,5 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 export interface IPayloadRestPassword {
   email: string;
@@ -7,7 +7,7 @@ export interface IPayloadRestPassword {
   secret: string;
 }
 
-export type DataResponseRestPassword = AxiosResposes<void>;
+export type DataResponseRestPassword = AxiosResponses<void>;
 export async function restPasswordApi(payload: IPayloadRestPassword) {
   return await http.patch("/user/rest", payload);
 }

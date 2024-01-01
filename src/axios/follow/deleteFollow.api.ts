@@ -1,12 +1,12 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
-export type DateDeleteFollow = AxiosResposes<void>;
+export type DateDeleteFollow = AxiosResponses<void>;
 
 export interface IPayloadDeleteFollow {
   id: number;
 }
 
-export async function deleteFollow(paylod: IPayloadDeleteFollow) {
-  return await http.delete(`/follow/del/${paylod.id}`);
+export async function deleteFollow(payload: IPayloadDeleteFollow) {
+  return await http.delete(`/follow/del/${payload.id}`);
 }

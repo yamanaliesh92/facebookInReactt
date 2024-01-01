@@ -49,11 +49,14 @@ const Comments: FC<IProps> = ({ postId, userIdPost }) => {
 
   const client = useQueryClient();
 
-  const { mutateAsync: mutateCreateComment, error } = useMutation<
-    DateResCreateComment,
-    AxiosErrors,
-    IPaylodCreateComment
-  >("createComment", createComment);
+  const {
+    mutateAsync: mutateCreateComment,
+    error,
+    isLoading,
+  } = useMutation<DateResCreateComment, AxiosErrors, IPaylodCreateComment>(
+    "createComment",
+    createComment
+  );
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue({ title: e.target.value });
@@ -126,6 +129,7 @@ const Comments: FC<IProps> = ({ postId, userIdPost }) => {
 
   return (
     <div className="comment">
+      {isLoading && <h1>loading...</h1>}
       {dateComment
         ? dateComment.data.map((it) => {
             const time = it.createAt;

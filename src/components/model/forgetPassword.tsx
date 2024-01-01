@@ -43,22 +43,19 @@ const ForgetPasswordModal: FC<Props> = ({ open, setOpen }) => {
     });
   };
 
-  const navgite = useNavigate();
+  const navigate = useNavigate();
 
-  const { mutateAsync, error, data } = useMutation<
+  const { mutateAsync, error, isLoading, data } = useMutation<
     DataResponseForgetPassword,
     AxiosErrors,
     IPayloadForgetPassword
   >("forgetPasswordApi", forgetPasswordApi);
 
-  const {
-    mutateAsync: mutateRestPassword,
-    error: errorRestPAssword,
-    data: dataRestPassword,
-  } = useMutation<DataResponseRestPassword, AxiosErrors, IPayloadRestPassword>(
-    "restPasswordApi",
-    restPasswordApi
-  );
+  const { mutateAsync: mutateRestPassword } = useMutation<
+    DataResponseRestPassword,
+    AxiosErrors,
+    IPayloadRestPassword
+  >("restPasswordApi", restPasswordApi);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,16 +78,15 @@ const ForgetPasswordModal: FC<Props> = ({ open, setOpen }) => {
       password: element.password,
     };
 
-    console.log("bodtRest", body);
-
     await mutateRestPassword(body);
 
-    console.log("hey");
-    navgite("/auth");
+    navigate("/auth");
   };
 
   return (
     <Modal opened={open} onClose={() => setOpen(false)}>
+      {error && <h1>{error.message}</h1>}
+      {isLoading && <h1>loading.....</h1>}
       <div className="ModelsForgetPasswoord">
         {!submit ? (
           <form onSubmit={onSubmit} className="infoForm">

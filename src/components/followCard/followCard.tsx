@@ -1,10 +1,10 @@
 import "./followCard.css";
 
-import covver from "../../images/cover.jpeg";
+import cover from "../../images/cover.jpeg";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { DateGetFollow, getFollowApi } from "../../axios/follow/getFollow.api";
 import { AxiosErrors } from "../../axios/common.api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   DateDeleteFollow,
   deleteFollow,
@@ -20,10 +20,11 @@ const FollowCard = () => {
   const toToggleFriend = () => {
     setOpenModal((prev) => !prev);
   };
-  const { data: dateGetFollow } = useQuery<DateGetFollow, AxiosErrors>(
-    "getFollow",
-    getFollowApi
-  );
+  const {
+    data: dateGetFollow,
+    error,
+    isLoading,
+  } = useQuery<DateGetFollow, AxiosErrors>("getFollow", getFollowApi);
 
   const { mutateAsync: mutateDeleteFollow } = useMutation<
     DateDeleteFollow,
@@ -47,6 +48,8 @@ const FollowCard = () => {
   return (
     <div className="followCard">
       <div className="text">who is Following you</div>
+      {error && <h1>{error.message}</h1>}
+      {isLoading && <h1>isLoading...</h1>}
       {dateGetFollow ? (
         <>
           {dateGetFollow?.data.map((item) => {
@@ -60,7 +63,7 @@ const FollowCard = () => {
                       className="followingImg"
                     />
                   ) : (
-                    <img src={covver} alt="ff" className="followingImg" />
+                    <img src={cover} alt="ff" className="followingImg" />
                   )}
 
                   <div className="name">

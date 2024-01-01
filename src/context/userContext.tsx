@@ -101,20 +101,12 @@ export const ProviderContext: FC<PropsWithChildren<{}>> = ({ children }) => {
   const { error, data, isLoading } = useQuery<MeDate, unknown>(
     "meQuery",
     getMe
-    // { enabled: true, cacheTime: 0, retry: true }
   );
   const [state, dispatch] = useReducer(reduce, initState);
 
   const login = useCallback((payload: IpayloadLogin) => {
     dispatch({ type: ActionUser.LOGIN, payload });
   }, []);
-
-  // const manuallyLogin = useCallback((payload: IpayloadLogin) => {
-  //   dispatch({
-  //     type: ActionUser.LOGIN,
-  //     payload: { ...payload, manualLogin: true },
-  //   });
-  // }, []);
 
   const logout = useCallback(() => {
     dispatch({ type: ActionUser.LOGOUT });

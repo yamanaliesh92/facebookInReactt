@@ -1,5 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 export interface IPayloadUpdatePost {
   title: string;
@@ -12,7 +12,7 @@ export interface IResponsePost {
   desc: string;
   img: any;
 }
-export type GetPostDateAiUpdate = AxiosResposes<IResponsePost | null>;
+export type GetPostDateAiUpdate = AxiosResponses<IResponsePost | null>;
 
 export async function updatePostApi(args: IPayloadUpdatePost) {
   return http.put(`/post/put/${args.id}`, args.title);

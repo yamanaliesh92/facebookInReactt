@@ -1,5 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 export interface IPayload {
   email: string;
@@ -16,7 +16,7 @@ interface IResponseRegister {
   token: string;
 }
 
-export type registerDate = AxiosResposes<IResponseRegister>;
+export type registerDate = AxiosResponses<IResponseRegister>;
 
 export async function registerApi(payload: IPayload) {
   return await http.post("/user/sign", payload);

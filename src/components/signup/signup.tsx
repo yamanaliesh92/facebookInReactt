@@ -83,14 +83,13 @@ const Signup: FC<Props> = ({ sign, setSign }) => {
     login({ email: data.user.email });
 
     if (element.password !== element.confirmPassword) {
-      console.log("in if ", element.confirmPassword);
       setConfirmPassword(true);
     }
 
     setToken("MyToken", data.token);
 
     setLoading(false);
-    navigate("/uploadaa");
+    navigate("/");
   };
 
   return (

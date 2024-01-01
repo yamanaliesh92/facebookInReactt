@@ -21,7 +21,7 @@ const InfoCard = () => {
     setUpdateState((prev) => !prev);
   };
 
-  const { data } = useQuery<infoDate>("getMyInfo", getOwnInfoApi);
+  const { data, isLoading } = useQuery<infoDate>("getMyInfo", getOwnInfoApi);
 
   useEffect(() => {
     if (!data?.data) return;
@@ -36,6 +36,8 @@ const InfoCard = () => {
   return (
     <div className="infoCard">
       <div className="infohead">
+        {isLoading && <h1>is loading..</h1>}
+
         <h4 data-testid="d">your info</h4>
         <div>
           <BiPencil onClick={() => setModelled(true)} />

@@ -1,13 +1,13 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 import { IResult } from "./me.api";
 
-export type DateGetAllUsers = AxiosResposes<IResult[]>;
+export type DateGetAllUsers = AxiosResponses<IResult[]>;
 
-export interface IPagenation {
+export interface IPagination {
   page?: number;
 }
 
-export async function getAllUserApi(args?: IPagenation) {
+export async function getAllUserApi(args?: IPagination) {
   return await http.get(`/user/all/user?page=${args?.page}`);
 }

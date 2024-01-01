@@ -4,7 +4,7 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 import { createLikeApi } from "../../axios/like/createLike.api";
 
 import { deletePostApi } from "../../axios/Post/deletePost.api";
-import { getAllPostsApi } from "../../axios/Post/getAllPost.api";
+
 import { getPostApi, GetPostDateApi } from "../../axios/Post/getPost.api";
 import {
   IPayloadUpdatePost,
@@ -15,7 +15,10 @@ import Post from "../post/post";
 import "./posts.css";
 
 const Posts = () => {
-  const { data } = useQuery<GetPostDateApi>("getPost", getPostApi);
+  const { data, error, isLoading } = useQuery<GetPostDateApi>(
+    "getPost",
+    getPostApi
+  );
   const client = useQueryClient();
 
   const { mutateAsync } = useMutation("deltePost", deletePostApi);
@@ -24,11 +27,6 @@ const Posts = () => {
     "updatePost",
     updatePostApi
   );
-
-  useEffect(() => {
-    if (!data) return;
-    console.log("dateGetPost", data);
-  }, [data]);
 
   const handleUpdate = async (id: number, args: IPayloadUpdatePost) => {
     await mutateUpdate(
@@ -68,6 +66,7 @@ const Posts = () => {
 
   return (
     <div className="posts">
+      {isLoading && <h1>is loading...</h1>}
       {data?.data?.map((item) => {
         return (
           <Post

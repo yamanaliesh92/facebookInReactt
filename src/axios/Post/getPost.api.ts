@@ -1,5 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 export interface IResponsePost {
   id: number;
@@ -8,7 +8,7 @@ export interface IResponsePost {
   img: any;
   likes: [];
 }
-export type GetPostDateApi = AxiosResposes<IResponsePost[]>;
+export type GetPostDateApi = AxiosResponses<IResponsePost[]>;
 
 export async function getPostApi() {
   return await http.get("/post/all");

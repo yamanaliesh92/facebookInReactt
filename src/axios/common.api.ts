@@ -1,11 +1,11 @@
 import { AxiosResponse, AxiosError } from "axios";
 
 interface IAxiosError {
-  sataus: string;
+  status: string;
   code: string;
   message: string;
 }
 
 export type AxiosErrors = AxiosError<IAxiosError>;
 
-export type AxiosResposes<T> = AxiosResponse<T>;
+export type AxiosResponses<T> = AxiosResponse<T>;

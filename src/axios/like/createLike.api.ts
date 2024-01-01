@@ -1,16 +1,16 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 interface IPayloadCreateLike {
   postId: number;
 }
 
-export interface IRsponseLike {
+export interface IResponseLike {
   postId: number;
   id: number;
 }
 
-export type crateLikeDataApi = AxiosResposes<IRsponseLike>;
+export type crateLikeDataApi = AxiosResponses<IResponseLike>;
 
 export async function createLikeApi(
   params: IPayloadCreateLike

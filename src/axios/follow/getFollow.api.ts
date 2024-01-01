@@ -1,5 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 export interface IUser {
   username: string;
@@ -7,12 +7,12 @@ export interface IUser {
   id: number;
 }
 
-export interface IResposeGetFollow {
+export interface IResponseGetFollow {
   id: number;
   following: IUser;
 }
 
-export type DateGetFollow = AxiosResposes<IResposeGetFollow[]>;
+export type DateGetFollow = AxiosResponses<IResponseGetFollow[]>;
 
 export async function getFollowApi() {
   return await http.get("/follow");

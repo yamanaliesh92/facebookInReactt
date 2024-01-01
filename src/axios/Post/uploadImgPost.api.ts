@@ -1,5 +1,4 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
 
 export interface IPayloadUploadPost {
   id: number;

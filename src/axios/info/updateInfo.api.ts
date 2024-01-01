@@ -1,14 +1,13 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
 
-export interface IpayloadUpdate {
+export interface PayloadUpdate {
   workAt?: string;
   livesIn?: string;
   country?: string;
   relationShip?: string;
 }
 
-export async function updateInfoApi(payload: IpayloadUpdate) {
+export async function updateInfoApi(payload: PayloadUpdate) {
   return await http.put("/info", {
     workAt: payload.workAt,
     livesIn: payload.livesIn,

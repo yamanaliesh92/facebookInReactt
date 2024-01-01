@@ -36,8 +36,6 @@ const Post: FC<IProps> = ({ items, deletePost, updatePost, createLike }) => {
     setLike((prev) => !prev);
   };
 
-  const { data: dateMe } = useContext(ContextUser);
-
   const ToggleEdit = (e: React.FormEvent) => {
     e.preventDefault();
     isEdit((prev) => !prev);

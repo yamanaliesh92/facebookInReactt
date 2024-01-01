@@ -1,6 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
-import { IPagenation } from "../user/getAllUser.api";
+import { AxiosResponses } from "../common.api";
 
 interface IUser {
   email: string;
@@ -19,7 +18,7 @@ export interface IResponseGetAllPost {
   likes: [];
   user: IUser;
 }
-export type GetPostDateApi = AxiosResposes<IResponseGetAllPost[]>;
+export type GetPostDateApi = AxiosResponses<IResponseGetAllPost[]>;
 
 export async function getAllPostsApi() {
   return await http.get("post/getAll/post");

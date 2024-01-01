@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FC, useState } from "react";
-import { IResposn } from "../../axios/comment/getAllCommentByPostId.api";
+import { IResponse } from "../../axios/comment/getAllCommentByPostId.api";
 import { Modal } from "@mantine/core";
 
 interface IEditingState {
@@ -8,7 +8,7 @@ interface IEditingState {
 }
 
 interface IProps {
-  detailsComment: IResposn;
+  detailsComment: IResponse;
   isLoading: boolean;
   updateCommentTitle: (id: number, title: string) => Promise<void>;
   editingState: IEditingState;

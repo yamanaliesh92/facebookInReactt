@@ -1,5 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 export interface IPayloadForgetPassword {
   email: string;
@@ -14,7 +14,8 @@ interface IResponseForgetPassword {
   secret: IPayloadSecret;
 }
 
-export type DataResponseForgetPassword = AxiosResposes<IResponseForgetPassword>;
+export type DataResponseForgetPassword =
+  AxiosResponses<IResponseForgetPassword>;
 
 export async function forgetPasswordApi(payload: IPayloadForgetPassword) {
   return await http.patch("/user/forget", payload);

@@ -1,5 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses } from "../common.api";
 
 export interface IPayloadCrateInfo {
   workAt: string;
@@ -16,7 +16,7 @@ interface IResponseInfo {
   userId: number;
 }
 
-export type infoDate = AxiosResposes<IResponseInfo>;
+export type infoDate = AxiosResponses<IResponseInfo>;
 
 export async function crateInfoApi(payload: IPayloadCrateInfo) {
   return await http.post("/info", payload);

@@ -1,5 +1,5 @@
 import { http } from "..";
-import { AxiosResposes } from "../common.api";
+import { AxiosResponses as AxiosResponses } from "../common.api";
 
 export interface IPaylodCreateComment {
   postId: number;
@@ -7,14 +7,14 @@ export interface IPaylodCreateComment {
   userId: number;
 }
 
-export interface IResponeCreateComment {
+export interface IRespondCreateComment {
   postId: number;
   userId: number;
   title: string;
 }
 
-export type DateResCreateComment = AxiosResposes<IResponeCreateComment>;
+export type DateResCreateComment = AxiosResponses<IRespondCreateComment>;
 
-export async function createComment(payload: IResponeCreateComment) {
+export async function createComment(payload: IRespondCreateComment) {
   return await http.post("/comment", payload);
 }
